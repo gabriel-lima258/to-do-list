@@ -1,39 +1,17 @@
-import Text from "./components/text";
-import TrashIcon from "./assets/icons/trash.svg?react";
-import Icon from "./components/icon";
-import Badge from "./components/badge";
-import Button from "./components/button";
-import ButtonIcon from "./components/button-icon";
-import InputText from "./components/input-text";
-import InputCheckbox from "./components/input-checkbox";
-import Card from "./components/card";
-import Container from "./components/container";
-// a biblioteca svgr permite importar arquivos svg como componentes react
+import { BrowserRouter, Route, Routes } from "react-router";
+import PageComponents from "./pages/page-components";
+import LayoutMain from "./pages/layout-main";
+import PageHome from "./pages/page-home";
 
 export default function App() {
   return (
-    <Container>
-      <div className="flex flex-col items-center justify-center">
-      <Text variant="body-md" className="text-shadow-pink-dark">
-        Hello world!
-      </Text>
-      <Text variant="body-md-bold" className="text-pink-base">
-        Ola mundo!
-      </Text>
-      <Text variant="body-sm-bold" className="text-shadow-green-base">
-        Ola mundo!
-      </Text>
-      <Icon svg={TrashIcon} animate className="fill-green-dark"/>
-      <Badge variant={"primary"}>522</Badge>
-      <Badge variant={"secondary"}>51</Badge>
-      <Button variant={"primary"} icon={TrashIcon}> Ola</Button>
-      <ButtonIcon variant={"primary"} icon={TrashIcon}/>
-      <ButtonIcon variant="secondary" icon={TrashIcon}/>
-      <ButtonIcon variant={"tertiary"}  icon={TrashIcon}/>
-      <InputText />
-      <InputCheckbox/>
-      <Card size={"md"}>ola mundo</Card>
-    </div>
-    </Container>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<LayoutMain />}>
+          <Route index element={<PageHome/>} />
+          <Route path="/components" element={<PageComponents/>} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }

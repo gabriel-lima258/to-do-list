@@ -7,11 +7,13 @@ import ButtonIcon from "./components/button-icon";
 import InputText from "./components/input-text";
 import InputCheckbox from "./components/input-checkbox";
 import Card from "./components/card";
+import Container from "./components/container";
 // a biblioteca svgr permite importar arquivos svg como componentes react
 
 export default function App() {
   return (
-    <div className="flex flex-col items-center justify-center">
+    <Container>
+      <div className="flex flex-col items-center justify-center">
       <Text variant="body-md" className="text-shadow-pink-dark">
         Hello world!
       </Text>
@@ -32,5 +34,6 @@ export default function App() {
       <InputCheckbox/>
       <Card size={"md"}>ola mundo</Card>
     </div>
+    </Container>
   )
 }

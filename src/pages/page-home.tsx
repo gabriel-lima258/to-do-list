@@ -1,11 +1,12 @@
 import Container from "../components/container";
+import TaskSummary from "../core-components/tasks-summary";
 
 export default function PageHome() {
   return (
-    <Container>
-      <h1 className="text-3xl font-bold">Hello world!</h1>
-      <p className="text-lg">Ola mundo!</p>
-      <p className="text-sm">Ola mundo!</p>
+    <Container as="article" className="space-y-3">
+      <header className="flex items-center justify-between">
+        <TaskSummary />
+      </header>
     </Container>
   );
 }

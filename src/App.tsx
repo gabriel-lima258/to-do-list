@@ -1,4 +1,6 @@
 import Text from "./components/text";
+import TrashIcon from "./assets/icons/trash.svg?react";
+// a biblioteca svgr permite importar arquivos svg como componentes react
 
 export default function App() {
   return (
@@ -12,6 +14,7 @@ export default function App() {
       <Text variant="body-sm-bold" className="text-shadow-green-base">
         Ola mundo!
       </Text>
+      <TrashIcon className="fill-green-dark" />
     </div>
   )
 }

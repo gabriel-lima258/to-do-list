@@ -1,14 +1,17 @@
+import Text from "./components/text";
+
 export default function App() {
   return (
-    <>
-      <h1 className="text-shadow-pink-dark text-2xl">Welcome to React + TypeScript + Vite</h1>
-      <p>To get started, edit <code>src/App.tsx</code> and save to reload.</p>
-      <p>Learn more about Vite:</p>
-      <ul>
-        <li><a href="https://vitejs.dev/guide/">Vite Guide</a></li>
-        <li><a href="https://vitejs.dev/guide/features.html">Vite Features</a></li>
-        <li><a href="https://vitejs.dev/guide/api-javascript.html">Vite API</a></li>
-      </ul>
-    </>
+    <div className="flex flex-col items-center justify-center">
+      <Text variant="body-md" className="text-shadow-pink-dark">
+        Hello world!
+      </Text>
+      <Text variant="body-md-bold" className="text-pink-base">
+        Ola mundo!
+      </Text>
+      <Text variant="body-sm-bold" className="text-shadow-green-base">
+        Ola mundo!
+      </Text>
+    </div>
   )
 }

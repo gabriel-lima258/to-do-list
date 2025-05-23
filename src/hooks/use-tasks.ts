@@ -18,7 +18,7 @@ export default function useTasks() {
     tasks,
 
     // ◼️ tasksCount: número total de tarefas
-    tasksCount: tasks.length,
+    tasksCount: tasks.filter((task) => task.state === "created").length,
 
     // ◼️ concludedTasksCount: 
     //    número de tarefas marcadas como concluídas

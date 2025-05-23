@@ -2,6 +2,7 @@ import Text from "./components/text";
 import TrashIcon from "./assets/icons/trash.svg?react";
 import Icon from "./components/icon";
 import Badge from "./components/badge";
+import Button from "./components/button";
 // a biblioteca svgr permite importar arquivos svg como componentes react
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
       <Icon svg={TrashIcon} animate className="fill-green-dark"/>
       <Badge variant={"primary"}>522</Badge>
       <Badge variant={"secondary"}>51</Badge>
+      <Button variant={"primary"} icon={TrashIcon}> Ola</Button>
     </div>
   )
 }

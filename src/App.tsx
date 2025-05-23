@@ -4,6 +4,7 @@ import Icon from "./components/icon";
 import Badge from "./components/badge";
 import Button from "./components/button";
 import ButtonIcon from "./components/button-icon";
+import InputText from "./components/input-text";
 // a biblioteca svgr permite importar arquivos svg como componentes react
 
 export default function App() {
@@ -25,6 +26,7 @@ export default function App() {
       <ButtonIcon variant={"primary"} icon={TrashIcon}/>
       <ButtonIcon variant="secondary" icon={TrashIcon}/>
       <ButtonIcon variant={"tertiary"}  icon={TrashIcon}/>
+      <InputText />
     </div>
   )
 }

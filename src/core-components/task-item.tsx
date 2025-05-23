@@ -21,13 +21,17 @@ export default function TaskItem({ task }: TaskItemProps) {
 		task?.state === ("creating" as TaskState),
 	);
 	const [taskTitle, setTaskTitle] = React.useState(task.title || "");
-	const { updateTask } = useTask();
+	const { updateTask, updateTaskStatus, deleteTask } = useTask();
 
 	function handleEditTask() {
 		setIsEditing(true);
 	}
 
 	function handleExitTask() {
+		if (task.state === ("creating" as TaskState)) {
+			deleteTask(task.id);
+		}
+		
 		setIsEditing(false);
 	}
 
@@ -43,14 +47,24 @@ export default function TaskItem({ task }: TaskItemProps) {
 		setIsEditing(false);
 	}
 
+	function handleUpdateTaskStatus(e: React.ChangeEvent<HTMLInputElement>) {
+		const checked = e.target.checked;
+
+		updateTaskStatus(task.id, checked);
+	}
+
+	function handleDeleteTask() {
+		deleteTask(task.id);
+	}
+
 	return (
 		<>
 			<Card size={"md"}>
 				{!isEditing ? (
 					<div className="flex items-center gap-4">
 						<InputCheckbox
-							value={task?.concluded?.toString()}
 							checked={task?.concluded}
+							onChange={handleUpdateTaskStatus}
 						/>
 						<Text
 							className={cx("flex-1", {
@@ -60,7 +74,11 @@ export default function TaskItem({ task }: TaskItemProps) {
 							{task?.title}
 						</Text>
 						<div className="flex gap-1">
-							<ButtonIcon icon={TrashIcon} variant={"tertiary"} />
+							<ButtonIcon
+								icon={TrashIcon}
+								variant={"tertiary"}
+								onClick={handleDeleteTask}
+							/>
 							<ButtonIcon
 								icon={PencilIcon}
 								variant={"tertiary"}

@@ -47,14 +47,10 @@ yarn dev
 - 🗑️ Excluir tarefas
 - 💾 Persistência no LocalStorage — as tarefas não somem ao recarregar a página
 - 🎨 Interface limpa, organizada e responsiva
-  
----
 
 ## 👨‍💻 Autor
 Desenvolvido por Gabriel Lima 🚀
 Entre em contato no LinkedIn: [link](https://www.linkedin.com/in/gabriel-lima258/)
-
----
 
 ## 📜 Licença
 Este projeto está licenciado sob a licença MIT.
